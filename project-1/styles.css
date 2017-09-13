@@ -3,8 +3,22 @@
   box-sizing: border-box;
 }
 
-.imgbackground {
+.border-top {
+  background-image: url("dashboard.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 400px;
+}
+
+/* .imgbackground {
   width: 100%;
+} */
+
+.border-top h1 {
+  font-size: 20px;
+  text-align: center;
 }
 
 .wrapper {
@@ -25,4 +39,14 @@
   float: left;
   border: 1px solid grey;
   margin: 1%;
+}
+
+.left-container {
+  width: 100%;
+}
+
+.drop-form {
+  margin: 0 auto;
+  padding-left: 10px;
+
 }
