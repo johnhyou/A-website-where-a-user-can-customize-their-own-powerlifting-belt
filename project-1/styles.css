@@ -7,7 +7,6 @@
   background-image: url("dashboard.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   height: 400px;
 }
@@ -19,6 +18,12 @@
 .border-top h1 {
   font-size: 20px;
   text-align: center;
+}
+
+.left-container {
+  float: left;
+  width: 20%;
+  padding: 5%;
 }
 
 .wrapper {
@@ -37,8 +42,14 @@
   margin: 1%;
 }
 
-.left-container {
-  float: left;
-  clear: both;
-  width: 17%;
+.drop-form {
+  width: 100%;
+  padding: 1px;
+}
+
+label {
+  padding-left: 20%;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: bold;
 }
