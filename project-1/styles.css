@@ -34,10 +34,11 @@
 .belt-type {
   height: 220px;
   margin-top: 5%;
+  max-width: 950px;
 }
 
 .prong {
-  width: 25.66%;
+  width: calc(100% / 4);
   border: 1px solid grey;
   margin: 1%;
 }
