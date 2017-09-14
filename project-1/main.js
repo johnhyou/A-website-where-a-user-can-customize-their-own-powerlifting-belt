@@ -17,12 +17,40 @@ $img2.addEventListener('mouseout', imgMouseOut)
 
 var belts = [
   {
-    name:'Dual Prong Belt'
+    id: '1',
+    name:'Dual Prong Belt',
     details: 'Zinc plated steel roll'
+  },
+  {
+    id: '2',
+    name: 'Single Prong Belt',
+    details: '23123122331asdada'
+  },
+  {
+    id: '3',
+    name: 'Lever Belt',
+    details: 'BLA BLA'
   }
+]
 
-function details(info) {
-  var $details = document.createElement('p')
-  $details.textContent = belts.details
-
+  var $belt = document.querySelector('#belt')
+  $belt.addEventListener('mouseover', function(event) {
+    var id = event.target.getAttribute('data-belt-id')
+    for (var i = 0; i < belts.length; i++) {
+      if(belts[i].id === id){
+        console.log(beltDetails(belts[i]))
+      }
+    }
+  })
+function beltDetails(data) {
+  var $info = document.createElement('div')
+  var $name = document.createElement('h2')
+  $name.textContent = data.name
+  var $description = document.createElement('p')
+  $description.textContent = data.details
+  $info.appendChild($name)
+  console.log($name)
+  console.log($description)
+  $info.appendChild($description)
+  return $info
 }
