@@ -24,12 +24,12 @@ var belts = [
   {
     id: '2',
     name: 'Single Prong Belt',
-    details: '23123122331asdada'
+    details: 'Zinc plated steel roller buckle. Four rows of lock-stiched, corrosive resistant, hi density nylon. Closer prong holes for more choice in precise fitting.'
   },
   {
     id: '3',
     name: 'Lever Belt',
-    details: 'BLA BLA'
+    details: 'Lever makes atheletes tighten and secure themselves with the push of the Lever. Also can be loosened in less than a second with a quick flick of the patented Lever. Four rows of lock-stiched, corrosive resistant, hi density nylon.'
   }
 ]
 
@@ -38,10 +38,11 @@ var belts = [
     var id = event.target.getAttribute('data-belt-id')
     for (var i = 0; i < belts.length; i++) {
       if(belts[i].id === id){
-        console.log(beltDetails(belts[i]))
+        beltDetails(belts[i])
       }
     }
   })
+
 function beltDetails(data) {
   var $info = document.createElement('div')
   var $name = document.createElement('h2')
@@ -49,8 +50,6 @@ function beltDetails(data) {
   var $description = document.createElement('p')
   $description.textContent = data.details
   $info.appendChild($name)
-  console.log($name)
-  console.log($description)
   $info.appendChild($description)
   return $info
 }
