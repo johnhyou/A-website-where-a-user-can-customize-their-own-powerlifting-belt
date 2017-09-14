@@ -19,7 +19,7 @@ var belts = [
   {
     id: '1',
     name:'Dual Prong Belt',
-    details: 'Zinc plated steel roll'
+    details: 'Zinc plated steel roller buckle. Six rows of lock-stiched, corrosive resistant, hi-density nylon.  Finished with top quality, fine suade providing non-slip surface. One solid thickness of the finest, and select leather.'
   },
   {
     id: '2',
