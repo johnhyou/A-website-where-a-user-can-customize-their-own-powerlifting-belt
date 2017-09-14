@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 /*
 var $img1 = document.querySelector('#img1')
 var $img2 = document.querySelector('#img2')
@@ -13,3 +14,15 @@ $img1.addEventListener('mouseover', imgMouseOver)
 $img2.addEventListener('mouseout', imgMouseOut)
 
 */
+
+var belts = [
+  {
+    name:'Dual Prong Belt'
+    details: 'Zinc plated steel roll'
+  }
+
+function details(info) {
+  var $details = document.createElement('p')
+  $details.textContent = belts.details
+
+}

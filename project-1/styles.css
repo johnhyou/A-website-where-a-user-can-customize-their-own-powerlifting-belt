@@ -25,18 +25,38 @@
 .wrapper {
   width: 80%;
   float: left;
+  margin-top: 4%;
 }
 
-.view {
-  height: 220px;
-  margin-top: 5%;
-  max-width: 950px;
-}
-
-.prong {
+.box {
+  float: left;
   width: calc(100% / 4);
-  border: 1px solid grey;
+  height: 220px;
   margin: 1%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.img1 {
+  background-image: url('belts/dualprong.jpg');
+}
+
+.img2 {
+  background-image: url('belts/singleprong.jpg');
+}
+
+.img3 {
+  background-image: url('belts/leverbelt.jpg');
+}
+
+
+.viewmore {
+  display: block;
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  font-size: 20px;
+  font-style: italic;
 }
 
 .drop-form {
@@ -47,17 +67,21 @@
 label {
   padding-left: 20%;
   font-style: italic;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
 .fade {
   opacity: 1;
-  transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s  ease-in-out;
   -moz-transition: opacity 0.25s ease-in-out;
   -webkit-transition: opacity 0.25s ease-in-out;
 }
 
 .fade:hover {
   opacity: 0.5;
+}
+
+.box:hover {
+  background-size: 110%;
 }
