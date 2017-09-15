@@ -34,11 +34,7 @@
 .wrapper {
   width: 80%;
   float: left;
-<<<<<<< HEAD
-  max-width: 950px;
-=======
   margin-top: 4%;
->>>>>>> belt-issue-2
 }
 
 .box {
@@ -53,12 +49,6 @@
   background-repeat: no-repeat;
 }
 
-<<<<<<< HEAD
-.prong {
-  width: calc(100% / 4);
-  border: 1px solid black;
-  margin: 1%;
-=======
 .img1 {
   background-image: url('belts/dualprong.jpg');
 }
@@ -75,7 +65,7 @@
   width: 40%;
   background-color: white;
   position: absolute;
-  top: 55%;
+  top: 30%;
   z-index: 1;
   left: 30%;
 }
@@ -83,7 +73,6 @@
 #detailBox {
   height: 450px;
   padding: 1%;
->>>>>>> belt-issue-2
 }
 
 .drop-form {
@@ -94,16 +83,12 @@
 label {
   padding-left: 20%;
   font-style: italic;
-<<<<<<< HEAD
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
-/* Class to add margin between each form */
-
 .form {
   margin: 1%;
-=======
   font-size: 14px;
   font-weight: bold;
 }
@@ -121,5 +106,4 @@ label {
 
 .box:hover {
   background-size: 75%;
->>>>>>> belt-issue-2
 }
