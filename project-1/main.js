@@ -42,9 +42,9 @@ var belts = [
        var beltDetails = getbeltDetails(belts[i])
       }
     }
-    var $belt = document.querySelector('#belt')
-    $belt.innerHTML = ''
-    $belt.appendChild(beltDetails)
+    var $popup = document.querySelector('#popup')
+    /* $belt.innerHTML = '' */
+    $popup.appendChild(beltDetails)
   })
 
 function getbeltDetails(data) {
@@ -55,5 +55,7 @@ function getbeltDetails(data) {
   $description.textContent = data.details
   $info.appendChild($name)
   $info.appendChild($description)
+  $info.style.border = '1px solid grey'
+  $info.setAttribute('id', 'detailBox')
   return $info
 }

@@ -12,8 +12,17 @@
 }
 
 .border-top h1 {
-  font-size: 20px;
+  font-family: 'Audiowide', cursive;
+  font-style: italic;
+  font-size: 24px;
+  font-weight: lighter;
   text-align: center;
+  color: white;
+}
+
+.border-top h2 {
+  font-family: 'Fugaz One', cursive;
+  color: white;
 }
 
 .left-container {
@@ -29,7 +38,10 @@
 }
 
 .box {
-  float: left;
+  border: 1px solid grey;
+  position: relative;
+  left: 3%;
+  float: right;
   width: calc(100% / 4);
   height: 220px;
   margin: 1%;
@@ -49,13 +61,18 @@
   background-image: url('belts/leverbelt.jpg');
 }
 
-.viewmore {
-  display: block;
-  position: relative;
-  top: 50%;
-  margin: 0 auto;
-  font-size: 20px;
-  font-style: italic;
+#popup {
+  width: 40%;
+  background-color: white;
+  position: absolute;
+  top: 55%;
+  z-index: 1;
+  left: 30%;
+}
+
+#detailBox {
+  height: 450px;
+  padding: 1%;
 }
 
 .drop-form {
@@ -82,5 +99,5 @@ label {
 }
 
 .box:hover {
-  background-size: 110%;
+  background-size: 75%;
 }
