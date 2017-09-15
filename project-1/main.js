@@ -34,16 +34,20 @@ var belts = [
 ]
 
   var $belt = document.querySelector('#belt')
-  $belt.addEventListener('mouseover', function(event) {
+
+  $belt.addEventListener('click', function(event) {
     var id = event.target.getAttribute('data-belt-id')
     for (var i = 0; i < belts.length; i++) {
-      if(belts[i].id === id){
-        beltDetails(belts[i])
+      if(belts[i].id === id) {
+       var beltDetails = getbeltDetails(belts[i])
       }
     }
+    var $belt = document.querySelector('#belt')
+    $belt.innerHTML = ''
+    $belt.appendChild(beltDetails)
   })
 
-function beltDetails(data) {
+function getbeltDetails(data) {
   var $info = document.createElement('div')
   var $name = document.createElement('h2')
   $name.textContent = data.name
