@@ -27,7 +27,7 @@ var belts = [
       }
     }
     var $popup = document.querySelector('#popup')
-    /* $belt.innerHTML = '' */
+    $popup.innerHTML = ''
     $popup.appendChild(beltDetails)
   })
 
