@@ -11,13 +11,18 @@
   height: 400px;
 }
 
-/* .imgbackground {
-  width: 100%;
-} */
-
 .border-top h1 {
-  font-size: 20px;
+  font-family: 'Audiowide', cursive;
+  font-style: italic;
+  font-size: 24px;
+  font-weight: lighter;
   text-align: center;
+  color: white;
+}
+
+.border-top h2 {
+  font-family: 'Fugaz One', cursive;
+  color: white;
 }
 
 .left-container {
@@ -29,18 +34,56 @@
 .wrapper {
   width: 80%;
   float: left;
+<<<<<<< HEAD
   max-width: 950px;
+=======
+  margin-top: 4%;
+>>>>>>> belt-issue-2
 }
 
-.belt-type {
+.box {
+  border: 1px solid grey;
+  position: relative;
+  left: 3%;
+  float: right;
+  width: calc(100% / 4);
   height: 220px;
-  margin-top: 5%;
+  margin: 1%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 .prong {
   width: calc(100% / 4);
   border: 1px solid black;
   margin: 1%;
+=======
+.img1 {
+  background-image: url('belts/dualprong.jpg');
+}
+
+.img2 {
+  background-image: url('belts/singleprong.jpg');
+}
+
+.img3 {
+  background-image: url('belts/leverbelt.jpg');
+}
+
+#popup {
+  width: 40%;
+  background-color: white;
+  position: absolute;
+  top: 55%;
+  z-index: 1;
+  left: 30%;
+}
+
+#detailBox {
+  height: 450px;
+  padding: 1%;
+>>>>>>> belt-issue-2
 }
 
 .drop-form {
@@ -51,6 +94,7 @@
 label {
   padding-left: 20%;
   font-style: italic;
+<<<<<<< HEAD
   font-size: 16px;
   font-weight: bold;
 }
@@ -59,4 +103,23 @@ label {
 
 .form {
   margin: 1%;
+=======
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.25s  ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+}
+
+.fade:hover {
+  opacity: 0.5;
+}
+
+.box:hover {
+  background-size: 75%;
+>>>>>>> belt-issue-2
 }
