@@ -41,7 +41,6 @@
 }
 
 .box {
-  border: 1px solid grey;
   position: relative;
   left: 3%;
   float: right;
@@ -64,6 +63,21 @@
   background-image: url('belts/leverbelt.jpg');
 }
 
+.img4 {
+  background-image: url('belts/polishblue.png');
+  background-size: 80%;
+}
+
+.img5 {
+  background-image: url('belts/polishred.png');
+  background-size: 80%;
+}
+
+.img6 {
+  background-image: url('belts/lever.png');
+  background-size: 80%;
+}
+
 #popup {
   width: 40%;
   background-color: white;
@@ -77,12 +91,12 @@
 #popup h2,
 p {
   position: relative;
-  top: 80%;
+  top: 0%;
   padding: 5px;
 }
 
 #detailBox {
-  height: 450px;
+  height: 500px;
   padding: 1%;
 }
 
