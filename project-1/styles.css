@@ -40,6 +40,28 @@
   text-align: center;
 }
 
+#popup {
+  width: 40%;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  left: 30%;
+  border-radius: 2px;
+}
+
+#popup h2,
+p {
+  position: relative;
+  top: 0%;
+  padding: 5px;
+}
+
+#detailBox {
+  height: 500px;
+  padding: 1%;
+}
+
 .wrapper {
   width: 80%;
   float: left;
@@ -82,28 +104,6 @@
 .img6 {
   background-image: url('belts/lever.png');
   background-size: 80%;
-}
-
-#popup {
-  width: 40%;
-  background-color: white;
-  position: absolute;
-  top: 30%;
-  z-index: 1;
-  left: 30%;
-  border-radius: 2px;
-}
-
-#popup h2,
-p {
-  position: relative;
-  top: 0%;
-  padding: 5px;
-}
-
-#detailBox {
-  height: 500px;
-  padding: 1%;
 }
 
 .drop-form {

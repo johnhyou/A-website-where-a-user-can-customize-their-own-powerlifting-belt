@@ -32,7 +32,7 @@ var belts = [
     var $popup = document.querySelector('#popup')
     $popup.innerHTML = ''
     $popup.appendChild(beltDetails)
-    $popup.appendChild(getbeltSize)
+    /* $popup.appendChild(getbeltSize) */
   })
 
 function getbeltDetails(data) {
@@ -52,17 +52,36 @@ function getbeltDetails(data) {
   return $info
 }
 
+var collections = [
+  {
+    id: '1',
+    text: 'Dual Prong'
+  },
+  {
+    id: '2',
+    text: 'Single Prong'
+  },
+  {
+    id: '3',
+    text: 'Lever Belt'
+  }
+]
 
-    /* option: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)'] */
-
-function getbeltSize(data) {
-
-  var $dropform = document.createElement('div')
-  var $labelName = document.createElement('label')
-  var $select = document.createElement('select')
-  $labelName.setAttribute('for', 'size-type')
-  $select.setAttribute('class', 'size-type')
-  $dropform.appendChild($labelName)
-  $dropform.appendChild($select)
-
+function createImgHead() {
+  var $imgHead = document.createElement('div')
+  var $imgTxt = document.createElement('h3')
+  $imgTxt.textContent = collections.text
+  $imgHead.appendChild($imgTxt)
+  $imgHead.setAttribute('class, beltHeader')
 }
+    /* option: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)']
+    function getbeltSize(data) {
+
+      var $dropform = document.createElement('div')
+      var $labelName = document.createElement('label')
+      var $select = document.createElement('select')
+      $labelName.setAttribute('for', 'size-type')
+      $select.setAttribute('class', 'size-type')
+      $dropform.appendChild($labelName)
+      $dropform.appendChild($select)
+    } */
