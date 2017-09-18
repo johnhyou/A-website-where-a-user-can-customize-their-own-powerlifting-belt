@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 1000px;
+}
+
 .extra-jumbotron {
   background-image: url("dashboard.jpg");
   background-position: center center;
