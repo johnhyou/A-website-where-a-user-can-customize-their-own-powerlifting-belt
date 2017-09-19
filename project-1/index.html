@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
     <link rela="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
     <title>CreateBelt</title>
   </head>
   <body>
-    <div class="border-top"> <!-- DASHBOARD -->
-      <img class="imgbackground" src="caseyv4.jpg"/>
-    </div>
-    <div class="wrapper">
-      <div class="belt-type">
-        <img class="dual prong" src="belts/dualprong.jpg" alt="dual">
-        <img class="single prong" src="belts/singleprong.jpg" alt="single">
-        <img class="lever prong" src="belts/leverbelt.jpg" alt="">
+    <div id="container">
+      <div class="border-top"> <!-- DASHBOARD -->
+        <h1>Build-A-Belt</h1>
+        <h2>100% America Made Leather Belts.<br>Don't buy a belt.<br> Buy your belt. </h2>
+      </div>
+      <div id="popup"></div>
+      <div id="belt" class="wrapper">
+        <div class="img1 box fade" data-belt-id="1"></div>
+        <div class="img2 box fade" data-belt-id="2"></div>
+        <div class="img3 box fade" data-belt-id="3"></div>
       </div>
     </div>
     <script src="main.js" type="text/javascript">
