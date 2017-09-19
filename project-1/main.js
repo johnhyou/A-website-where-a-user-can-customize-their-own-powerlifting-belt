@@ -35,7 +35,9 @@ var belts = [
     var $popup = document.querySelector('#popup')
     $popup.innerHTML = ''
     $popup.appendChild(beltDetails)
-    /* $popup.appendChild(getbeltSize) */
+
+    var $detailBox = document.querySelector('#detailBox')
+    $detailBox.appendChild(getBeltSize())
   })
 
 function getbeltDetails(data) {
@@ -51,9 +53,39 @@ function getbeltDetails(data) {
   $info.appendChild($description)
   $info.style.border = '1px solid grey'
   $info.setAttribute('id', 'detailBox')
+  $description.style.paddingBottom = '2px'
 
   return $info
 }
+
+
+var getCustom = [
+  {
+    size: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)']
+  }
+]
+
+function getBeltSize() {
+  var $sizeForm = document.createElement('div')
+  var $label = document.createElement('label')
+  var $select = document.createElement('select')
+
+  for (var i = 0; i < getCustom[0].size.length; i++) {
+    var $option = document.createElement('option')
+    console.log(getCustom[0].size[i])
+    $option.textContent = getCustom[0].size[i]
+    $select.appendChild($option)
+  }
+
+  $sizeForm.classList.add('drop-form')
+  $label.setAttribute('for', 'size-type')
+  $label.textContent = 'Belt Size:'
+  $select.classList.add('size-type')
+  $sizeForm.appendChild($label)
+  $sizeForm.appendChild($select)
+  return $sizeForm
+}
+
 
 function createBelt(data) {
   var $belt = document.createElement('div')
@@ -73,7 +105,7 @@ function createBelt(data) {
   $header.style.textAlign = 'center'
   $header.style.height = '30px'
   $header.style.margin = '0 auto'
-  
+
   return $belt
 }
 
@@ -81,6 +113,17 @@ for (var i = 0; i < belts.length; i++) {
   $belt.appendChild(createBelt(belts[i]))
 }
 
+
+
+
+
+function createPicBorder(data) {
+  var $border = document.createElement('div')
+  var $picBorder = document.createElement('img')
+  $picBorder.setAttribute('src', 'slider/slide2.jpg')
+
+}
+createPicBorder()
 
 /*
 var $box = document.getElementsByClassName('box')
@@ -102,20 +145,3 @@ $view.addEventListener('mouseover', function() {
   $view.style.display = 'block'
 })
 */
-
-
-
-
-
-
-    /* option: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)']
-    function getbeltSize(data) {
-
-      var $dropform = document.createElement('div')
-      var $labelName = document.createElement('label')
-      var $select = document.createElement('select')
-      $labelName.setAttribute('for', 'size-type')
-      $select.setAttribute('class', 'size-type')
-      $dropform.appendChild($labelName)
-      $dropform.appendChild($select)
-    } */
