@@ -84,8 +84,11 @@ p {
 }
 
 .drop-form {
-  width: 100%;
-  padding: 1px;
+  width: 20%;
+  float: right;
+  position: relative;
+  bottom: 100%;
+  font-size: 20px;
 }
 
 label {

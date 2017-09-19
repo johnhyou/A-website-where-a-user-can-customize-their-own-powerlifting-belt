@@ -38,6 +38,8 @@ var belts = [
 
     var $detailBox = document.querySelector('#detailBox')
     $detailBox.appendChild(getBeltSize())
+    $detailBox.appendChild(getBeltThickness())
+    $detailBox.append(getBuckleType())
   })
 
 function getbeltDetails(data) {
@@ -61,8 +63,11 @@ function getbeltDetails(data) {
 
 var getCustom = [
   {
-    size: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)']
+    size: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)'],
+    thickness: ['10MM', '13MM'],
+    buckle: ['Dual Prong', 'Single Prong', 'Lever Buckle']
   }
+
 ]
 
 function getBeltSize() {
@@ -83,8 +88,60 @@ function getBeltSize() {
   $select.classList.add('size-type')
   $sizeForm.appendChild($label)
   $sizeForm.appendChild($select)
+
+
   return $sizeForm
 }
+
+function getBeltThickness() {
+  var $thicknessForm = document.createElement('div')
+  var $label = document.createElement('label')
+  var $select = document.createElement('select')
+
+  for (var i = 0; i < getCustom[0].thickness.length; i++) {
+    var $option = document.createElement('option')
+    console.log(getCustom[0].thickness[i])
+    $option.textContent = getCustom[0].thickness[i]
+    $select.appendChild($option)
+  }
+
+  $label.setAttribute('for', 'thick-type')
+  $label.textContent = 'Belt Thickness:'
+  $select.classList.add('thick-type')
+  $thicknessForm.classList.add('drop-form')
+  $thicknessForm.appendChild($label)
+  $thicknessForm.appendChild($select)
+  $thicknessForm.style.display = 'block'
+
+  return $thicknessForm
+
+}
+
+function getBuckleType() {
+  var $buckleForm = document.createElement('div')
+  var $label = document.createElement('label')
+  var $select = document.createElement('select')
+
+  for (var i = 0; i < getCustom[0].buckle.length; i++) {
+    var $option = document.createElement('option')
+    $option.textContent = getCustom[0].buckle[i]
+    $select.appendChild($option)
+  }
+
+  $label.textContent = 'Buckle Type:'
+  $label.setAttribute('for', 'buckle-type')
+  $select.classList.add('buckle-type')
+  $buckleForm.classList.add('drop-form')
+  $buckleForm.appendChild($label)
+  $buckleForm.appendChild($select)
+
+  return $buckleForm
+}
+
+
+
+
+
 
 
 function createBelt(data) {
