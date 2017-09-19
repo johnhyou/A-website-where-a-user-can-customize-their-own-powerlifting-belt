@@ -39,23 +39,30 @@ var belts = [
     var $detailBox = document.querySelector('#detailBox')
     $detailBox.appendChild(getBeltSize())
     $detailBox.appendChild(getBeltThickness())
-    $detailBox.append(getBuckleType())
+    $detailBox.appendChild(getBuckleType())
+
   })
 
 function getbeltDetails(data) {
   var $info = document.createElement('div')
-  var $name = document.createElement('h2')
-  $name.textContent = data.name
-  var $description = document.createElement('p')
-  $description.textContent = data.details
+  var $exitIcon = document.createElement('i')
   var $img = document.createElement('img')
+  var $name = document.createElement('h2')
+  var $description = document.createElement('p')
+
+  $exitIcon.classList.add('fa')
+  $exitIcon.classList.add('fa-window-close')
+  $exitIcon.setAttribute('aria-hidden', 'true')
+
+  $name.textContent = data.name
+  $description.textContent = data.details
   $img.setAttribute('src', data.img)
+  $info.appendChild($exitIcon)
   $info.appendChild($img)
   $info.appendChild($name)
   $info.appendChild($description)
   $info.style.border = '1px solid grey'
   $info.setAttribute('id', 'detailBox')
-  $description.style.paddingBottom = '2px'
 
   return $info
 }
@@ -83,9 +90,10 @@ function getBeltSize() {
   }
 
   $sizeForm.classList.add('drop-form')
-  $label.setAttribute('for', 'size-type')
+  $label.setAttribute('for', 'size type')
   $label.textContent = 'Belt Size:'
   $select.classList.add('size-type')
+  $select.classList.add('select')
   $sizeForm.appendChild($label)
   $sizeForm.appendChild($select)
 
@@ -108,6 +116,7 @@ function getBeltThickness() {
   $label.setAttribute('for', 'thick-type')
   $label.textContent = 'Belt Thickness:'
   $select.classList.add('thick-type')
+  $select.classList.add('select')
   $thicknessForm.classList.add('drop-form')
   $thicknessForm.appendChild($label)
   $thicknessForm.appendChild($select)
@@ -131,16 +140,13 @@ function getBuckleType() {
   $label.textContent = 'Buckle Type:'
   $label.setAttribute('for', 'buckle-type')
   $select.classList.add('buckle-type')
+  $select.classList.add('select')
   $buckleForm.classList.add('drop-form')
   $buckleForm.appendChild($label)
   $buckleForm.appendChild($select)
 
   return $buckleForm
 }
-
-
-
-
 
 
 
@@ -155,6 +161,7 @@ function createBelt(data) {
   $belt.setAttribute('data-belt-id', data.id)
   $belt.style.backgroundImage = "url('" + data.img + "')"
 
+  $header.classList.add('headText')
   $header.style.backgroundColor = 'black'
   $header.style.color = 'white'
   $header.style.letterSpacing = '6px'
@@ -169,6 +176,23 @@ function createBelt(data) {
 for (var i = 0; i < belts.length; i++) {
   $belt.appendChild(createBelt(belts[i]))
 }
+
+
+
+
+/*
+function modalFader() {
+  var $fade = document.createElement('div')
+  $fade.classList.add('modalFade')
+  $fade.style.opacity = '0.5'
+  $fade.style.backgroundColor = 'black'
+  $fade.style.zIndex = '5'
+
+  return $fade
+
+} */
+
+
 
 
 

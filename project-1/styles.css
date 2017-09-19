@@ -48,10 +48,8 @@
   width: 40%;
   background-color: white;
   position: absolute;
-  top: 100%;
   z-index: 1;
   left: 30%;
-  border-radius: 2px;
 }
 
 #popup h2,
@@ -64,6 +62,7 @@ p {
 #detailBox {
   height: 550px;
   padding: 4%;
+  border-radius: 10px;
 }
 
 .wrapper {
@@ -98,10 +97,15 @@ label {
   font-weight: bold;
 }
 
-.form {
-  margin: 1%;
-  font-size: 14px;
-  font-weight: bold;
+.select {
+  width: 100%;
+}
+
+.fa {
+  float: right;
+  position: relative;
+  bottom: 43px;
+  left: 42px;
 }
 
 .fade {
