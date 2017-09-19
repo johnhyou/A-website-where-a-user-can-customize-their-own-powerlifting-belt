@@ -4,19 +4,22 @@ var belts = [
     id: '1',
     img: 'belts/dualprong.jpg',
     name:'Dual Prong Belt',
-    details: 'Zinc plated steel roller buckle. Six rows of lock-stiched, corrosive resistant, hi-density nylon.  Finished with top quality, fine suade providing non-slip surface. One solid thickness of the finest, and select leather.'
+    details: 'Zinc plated steel roller buckle. Six rows of lock-stiched, corrosive resistant, hi-density nylon.  Finished with top quality, fine suade providing non-slip surface. One solid thickness of the finest, and select leather.',
+    header: 'Dual Prong Belt'
   },
   {
     id: '2',
     img: 'belts/singleprong.jpg',
     name: 'Single Prong Belt',
-    details: 'Zinc plated steel roller buckle. Four rows of lock-stiched, corrosive resistant, hi density nylon. Closer prong holes for more choice in precise fitting.'
+    details: 'Zinc plated steel roller buckle. Four rows of lock-stiched, corrosive resistant, hi density nylon. Closer prong holes for more choice in precise fitting.',
+    header: 'Single Prong'
   },
   {
     id: '3',
     img: 'belts/leverbelt.jpg',
     name: 'Lever Belt',
-    details: 'Lever makes atheletes tighten and secure themselves with the push of the Lever. Also can be loosened in less than a second with a quick flick of the patented Lever. Four rows of lock-stiched, corrosive resistant, hi density nylon.'
+    details: 'Lever makes atheletes tighten and secure themselves with the push of the Lever. Also can be loosened in less than a second with a quick flick of the patented Lever. Four rows of lock-stiched, corrosive resistant, hi density nylon.',
+    header: 'Lever Belt'
   }
 ]
 
@@ -52,28 +55,59 @@ function getbeltDetails(data) {
   return $info
 }
 
-var collections = [
-  {
-    id: '1',
-    text: 'Dual Prong'
-  },
-  {
-    id: '2',
-    text: 'Single Prong'
-  },
-  {
-    id: '3',
-    text: 'Lever Belt'
-  }
-]
+function createBelt(data) {
+  var $belt = document.createElement('div')
+  var $header = document.createElement('h4')
 
-function createImgHead() {
-  var $imgHead = document.createElement('div')
-  var $imgTxt = document.createElement('h3')
-  $imgTxt.textContent = collections.text
-  $imgHead.appendChild($imgTxt)
-  $imgHead.setAttribute('class, beltHeader')
+  $header.textContent = data.header
+  $belt.appendChild($header)
+  $belt.classList.add('box')
+  $belt.classList.add('fade')
+  $belt.setAttribute('data-belt-id', data.id)
+  $belt.style.backgroundImage = "url('" + data.img + "')"
+
+  $header.style.backgroundColor = 'black'
+  $header.style.color = 'white'
+  $header.style.letterSpacing = '6px'
+  $header.style.fontStyle = 'normal'
+  $header.style.textAlign = 'center'
+  $header.style.height = '30px'
+  $header.style.margin = '0 auto'
+  
+  return $belt
 }
+
+for (var i = 0; i < belts.length; i++) {
+  $belt.appendChild(createBelt(belts[i]))
+}
+
+
+/*
+var $box = document.getElementsByClassName('box')
+function createViewMore() {
+  for (var i = 0; i < $box.length; i++) {
+    var $viewMore = document.createElement('div')
+    var $viewMoreText = document.createElement('h3')
+    $viewMoreText.textContent = 'View More'
+    $viewMore.appendChild($viewMoreText)
+    $viewMore.style.display = 'none'
+    $viewMore.setAttribute('id', 'view')
+    $box[i].appendChild($viewMore)
+  }
+}
+createViewMore()
+
+var $view = document.querySelector('view')
+$view.addEventListener('mouseover', function() {
+  $view.style.display = 'block'
+})
+*/
+
+
+
+
+
+
     /* option: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)']
     function getbeltSize(data) {
 

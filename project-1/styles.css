@@ -48,7 +48,7 @@
   width: 40%;
   background-color: white;
   position: absolute;
-  top: 30%;
+  top: 130%;
   z-index: 1;
   left: 30%;
   border-radius: 2px;
@@ -81,33 +81,6 @@ p {
   margin: 1%;
   background-position: center center;
   background-repeat: no-repeat;
-}
-
-.img1 {
-  background-image: url('belts/dualprong.jpg');
-}
-
-.img2 {
-  background-image: url('belts/singleprong.jpg');
-}
-
-.img3 {
-  background-image: url('belts/leverbelt.jpg');
-}
-
-.img4 {
-  background-image: url('belts/polishblue.png');
-  background-size: 80%;
-}
-
-.img5 {
-  background-image: url('belts/polishred.png');
-  background-size: 80%;
-}
-
-.img6 {
-  background-image: url('belts/lever.png');
-  background-size: 80%;
 }
 
 .drop-form {
