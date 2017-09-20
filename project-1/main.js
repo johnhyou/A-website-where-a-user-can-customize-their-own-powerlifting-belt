@@ -57,6 +57,7 @@ function getbeltDetails(data) {
   $name.textContent = data.name
   $description.textContent = data.details
   $img.setAttribute('src', data.img)
+  $img.style.width = '200px'
   $info.appendChild($exitIcon)
   $info.appendChild($img)
   $info.appendChild($name)
@@ -71,8 +72,8 @@ function getbeltDetails(data) {
 var getCustom = [
   {
     size: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)'],
-    thickness: ['10MM', '13MM'],
-    buckle: ['Dual Prong', 'Single Prong', 'Lever Buckle']
+    thickness: ['10MM $89.99', '13MM $109.99'],
+    buckle: ['Dual Prong', 'Single Prong', 'Lever Buckle (+ $19.99)']
   }
 
 ]

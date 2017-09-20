@@ -27,6 +27,10 @@
   color: white;
 }
 
+#my-slider {
+  \max-height: 50%;
+}
+
 .jumbotron,
 .jumbotron h2 {
   font-family: 'Fugaz One', cursive;
@@ -65,6 +69,13 @@ p {
   border-radius: 10px;
 }
 
+.drop-form {
+  width: 100%;
+  float: right;
+  font-size: 20px;
+  display: table-cell;
+}
+
 .wrapper {
   width: 80%;
   float: left;
@@ -80,14 +91,6 @@ p {
   margin: 1%;
   background-position: center center;
   background-repeat: no-repeat;
-}
-
-.drop-form {
-  width: 20%;
-  float: right;
-  position: relative;
-  bottom: 100%;
-  font-size: 20px;
 }
 
 label {
