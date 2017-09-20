@@ -40,6 +40,7 @@ var belts = [
     $detailBox.appendChild(getBeltSize())
     $detailBox.appendChild(getBeltThickness())
     $detailBox.appendChild(getBuckleType())
+    $detailBox.appendChild(cartButton(id))
 
   })
 
@@ -69,6 +70,68 @@ function getbeltDetails(data) {
 }
 
 
+function cartButton(id) {
+  console.log(id)
+  var $buttonContainer = document.createElement('div')
+  var $addButton = document.createElement('button')
+  var $cartImg = document.createElement('i')
+
+  $cartImg.classList.add('fa')
+  $cartImg.classList.add('fa-shopping-cart')
+  $cartImg.setAttribute('aria-hidden', 'true')
+
+  $addButton.setAttribute('type', 'button')
+  $addButton.classList.add('btn')
+  $addButton.classList.add('btn-success')
+  $addButton.classList.add('cartbutt')
+  $addButton.textContent = 'Add to Cart'
+  $addButton.style.fontStyle = 'normal'
+
+  $buttonContainer.appendChild($cartImg)
+  $buttonContainer.appendChild($addButton)
+  $buttonContainer.setAttribute('id', 'cartButton')
+
+    $addButton.addEventListener('click', function(event){
+      var $size = document.getElementsByClassName('size-type')
+      var $thick = document.getElementsByClassName('thick-type')
+      var $buckle = document.getElementsByClassName('buckle-type')
+
+      var mybelt =
+        {
+          id: id,
+          mySize: $size[0].value,
+          myThick: $thick[0].value,
+          myBuckle: $buckle[0].value
+        }
+
+      cart.push(mybelt)
+      var $jumbo = document.getElementsByClassName('extra-jumbotron')
+      $jumbo[0].innerHTML = ''
+      $jumbo[0].appendChild(cartBadge())
+    })
+  return $buttonContainer
+}
+
+
+
+var cart = []
+
+function cartBadge() {
+  var $cart = document.createElement('div')
+  var $icon = document.createElement('i')
+
+  $icon.classList.add('fa')
+  $icon.classList.add('fa-shopping-cart')
+  $icon.classList.add('shopcart')
+  $icon.setAttribute('aria-hidden', 'true')
+  $icon.textContent = cart.length
+
+  $cart.appendChild($icon)
+
+  return $cart
+}
+
+
 var getCustom = [
   {
     size: ['XSMALL-(22-25)', 'SMALL-(26-29)', 'MEDIUM-(30-33)', 'LARGE-(34-38)', 'XLARGE-(34-38)','2XLARGE(43-46)', '3XLARGE-(47-50)', '4XLARGE-(51-54)'],
@@ -85,7 +148,6 @@ function getBeltSize() {
 
   for (var i = 0; i < getCustom[0].size.length; i++) {
     var $option = document.createElement('option')
-    console.log(getCustom[0].size[i])
     $option.textContent = getCustom[0].size[i]
     $select.appendChild($option)
   }
@@ -102,6 +164,7 @@ function getBeltSize() {
   return $sizeForm
 }
 
+
 function getBeltThickness() {
   var $thicknessForm = document.createElement('div')
   var $label = document.createElement('label')
@@ -109,7 +172,6 @@ function getBeltThickness() {
 
   for (var i = 0; i < getCustom[0].thickness.length; i++) {
     var $option = document.createElement('option')
-    console.log(getCustom[0].thickness[i])
     $option.textContent = getCustom[0].thickness[i]
     $select.appendChild($option)
   }
@@ -163,7 +225,7 @@ function collectionsBar() {
 collectionsBar()
 
 
-/* three column belt images */
+/* creates three column belt images */
 function createBelt(data) {
   var $belt = document.createElement('div')
   var $header = document.createElement('h4')
@@ -222,26 +284,3 @@ function createPicBorder(data) {
 
 }
 createPicBorder()
-
-
-
-/*
-var $box = document.getElementsByClassName('box')
-function createViewMore() {
-  for (var i = 0; i < $box.length; i++) {
-    var $viewMore = document.createElement('div')
-    var $viewMoreText = document.createElement('h3')
-    $viewMoreText.textContent = 'View More'
-    $viewMore.appendChild($viewMoreText)
-    $viewMore.style.display = 'none'
-    $viewMore.setAttribute('id', 'view')
-    $box[i].appendChild($viewMore)
-  }
-}
-createViewMore()
-
-var $view = document.querySelector('view')
-$view.addEventListener('mouseover', function() {
-  $view.style.display = 'block'
-})
-*/
