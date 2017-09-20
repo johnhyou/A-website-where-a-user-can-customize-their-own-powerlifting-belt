@@ -51,9 +51,10 @@
 #popup {
   width: 40%;
   background-color: white;
-  position: absolute;
   z-index: 1;
+  position: absolute;
   left: 30%;
+  clear: both;
 }
 
 #popup h2,
@@ -67,12 +68,13 @@ p {
   height: 550px;
   padding: 4%;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .drop-form {
   width: 100%;
-  float: right;
-  font-size: 20px;
+  float: left;
+  font-size: 14px;
   display: table-cell;
 }
 
@@ -109,6 +111,19 @@ label {
   position: relative;
   bottom: 43px;
   left: 42px;
+}
+
+.background {
+  float: left;
+  width: 100%;
+  background-color: black;
+  margin-top: 15%;
+}
+
+.barbellgirl {
+  width: 45%;
+  position: relative;
+  left: 10%;
 }
 
 .fade {

@@ -149,8 +149,21 @@ function getBuckleType() {
   return $buckleForm
 }
 
+function collectionsBar() {
+  var $jumboContainer = document.createElement('div')
+  var $header = document.createElement('h2')
+
+  $header.textContent = 'COLLECTIONS'
+  $jumboContainer.classList.add('jumbo-contain')
+  $jumboContainer.appendChild($header)
+
+  var $wrapper = document.querySelector('#collect-bar')
+  $wrapper.appendChild($jumboContainer)
+}
+collectionsBar()
 
 
+/* three column belt images */
 function createBelt(data) {
   var $belt = document.createElement('div')
   var $header = document.createElement('h4')
@@ -178,34 +191,39 @@ for (var i = 0; i < belts.length; i++) {
   $belt.appendChild(createBelt(belts[i]))
 }
 
-
-
-
 /*
 function modalFader() {
-  var $fade = document.createElement('div')
-  $fade.classList.add('modalFade')
-  $fade.style.opacity = '0.5'
-  $fade.style.backgroundColor = 'black'
-  $fade.style.zIndex = '5'
+var $fade = document.createElement('div')
+$fade.classList.add('modalFade')
+$fade.style.opacity = '0.5'
+$fade.style.backgroundColor = 'black'
+$fade.style.zIndex = '5'
 
-  return $fade
+return $fade
 
 } */
 
 
 
 
-
-
-
 function createPicBorder(data) {
   var $border = document.createElement('div')
-  var $picBorder = document.createElement('img')
-  $picBorder.setAttribute('src', 'slider/slide2.jpg')
+  var $pic = document.createElement('img')
+  var $picBorder = document.querySelector('#picborder')
+
+  /*$border.classList.add('jumbotron') */
+  $border.classList.add('background')
+  $pic.setAttribute('src', 'slider/border2.jpg')
+  $pic.setAttribute('alt', 'slider')
+  $pic.classList.add('barbellgirl')
+  $border.appendChild($pic)
+  $picBorder.appendChild($border)
+
 
 }
 createPicBorder()
+
+
 
 /*
 var $box = document.getElementsByClassName('box')
