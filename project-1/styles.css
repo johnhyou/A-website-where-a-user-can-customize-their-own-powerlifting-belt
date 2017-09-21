@@ -106,6 +106,15 @@ label {
   width: 100%;
 }
 
+#popup {
+  width: 40%;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  left: 30%;
+}
+
 .fa {
   float: right;
   position: relative;
