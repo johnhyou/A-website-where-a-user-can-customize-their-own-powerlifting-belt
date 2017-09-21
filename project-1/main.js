@@ -40,7 +40,7 @@ var belts = [
     $detailBox.appendChild(getBeltSize())
     $detailBox.appendChild(getBeltThickness())
     $detailBox.appendChild(getBuckleType())
-    $detailBox.appendChild(cartButton(id))
+    $detailBox.appendChild(createCartButton(id))
 
   })
 
@@ -70,7 +70,7 @@ function getbeltDetails(data) {
 }
 
 
-function cartButton(id) {
+function createCartButton(id) {
   console.log(id)
   var $buttonContainer = document.createElement('div')
   var $addButton = document.createElement('button')
@@ -92,6 +92,7 @@ function cartButton(id) {
   $buttonContainer.setAttribute('id', 'cartButton')
 
     $addButton.addEventListener('click', function(event){
+      /* select elements from drop-down bar */
       var $size = document.getElementsByClassName('size-type')
       var $thick = document.getElementsByClassName('thick-type')
       var $buckle = document.getElementsByClassName('buckle-type')
@@ -105,38 +106,37 @@ function cartButton(id) {
         }
 
       cart.push(mybelt)
+
       var $jumbo = document.getElementsByClassName('extra-jumbotron')
       $jumbo[0].innerHTML = ''
       $jumbo[0].appendChild(cartBadge())
+      var $popup = document.querySelector('#popup')
+      $popup.innerHTML = ''
     })
-  return $buttonContainer
-}
+    return $buttonContainer
+  }
 
 var cart = []
 
 function cartBadge() {
-  var $cart = document.createElement('div')
-  var $icon = document.createElement('button')
+  var $cartBadge = document.createElement('button')
+  $cartBadge.classList.add('fa')
+  $cartBadge.classList.add('fa-shopping-cart')
+  $cartBadge.classList.add('shopcart')
 
-  $icon.classList.add('fa')
-  $icon.classList.add('fa-shopping-cart')
-  $icon.classList.add('shopcart')
-  $icon.setAttribute('aria-hidden', 'true')
+  var $container = document.querySelector('.jumbotron')
+  $container.appendChild($cartBadge)
+
+  var $icon = document.querySelector('.shopcart')
   $icon.textContent = cart.length
-
-  $cart.appendChild($icon)
-
-
-
-  return $cart
+  return $cartBadge
 }
+
 
 var $viewCart = document.querySelector('.shopcart')
 $viewCart.addEventListener('click', function(event) {
   var $cartModal = document.querySelector('#view-cart-modal')
   $cartModal.appendChild(createCartModal())
-
-
 })
 
 function createCartModal() {
