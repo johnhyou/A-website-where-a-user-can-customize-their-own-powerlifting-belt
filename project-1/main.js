@@ -112,8 +112,6 @@ function cartButton(id) {
   return $buttonContainer
 }
 
-
-
 var cart = []
 
 function cartBadge() {
@@ -133,6 +131,15 @@ function cartBadge() {
   return $cart
 }
 
+var $viewCart = document.querySelector('.shopcart')
+
+$viewCart[0].addEventListener('click', function(event) {
+  var $cartWrapper = document.createElement('div')
+  var $table = document.createElement('table')
+  var $thead = document.createElement('thead')
+  var $tr = document.createElement('tr')
+
+})
 
 
 var getCustom = [
