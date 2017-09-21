@@ -139,6 +139,12 @@ $viewCart.addEventListener('click', function(event) {
   $cartModal.appendChild(createCartModal())
 })
 
+
+function cartDetails(data) {
+  return 'Build-A-Belts' + ' ' + data.myBuckle + ' ' + 'Belt' + '|' +
+  data.mySize + ',' + '(' + data.myThick+ ')'
+}
+
 function createCartModal() {
   var $cartWrapper = document.createElement('div')
   var $table = document.createElement('table')
@@ -149,14 +155,17 @@ function createCartModal() {
   var $th3 = document.createElement('th')
   var $th4 = document.createElement('th')
 
+  /* thead styling */
+  $thead.style.backgroundColor = '#F8F9F8'
+
   $cartWrapper.classList.add('cart-wrapper')
   $table.classList.add('table')
+
 
   $th1.textContent = 'Product'
   $th2.textContent = 'Price'
   $th3.textContent = 'Quantity'
   $th4.textContent = 'Total'
-
 
   $tr.appendChild($th1)
   $tr.appendChild($th2)
@@ -167,18 +176,18 @@ function createCartModal() {
   /* table body starts now */
   var $tBody = document.createElement('tbody')
   var $trBody = document.createElement('tr')
-  var $thbody1 = document.createElement('th')
+  var $productInfo = document.createElement('th')
   var $thbody2 = document.createElement('th')
   var $thbody3 = document.createElement('th')
   var $thbody4 = document.createElement('th')
 
-  $trBody.appendChild($thbody1)
+  $productInfo.textContent = cartDetails(cart)
+
+  $trBody.appendChild($productInfo)
   $trBody.appendChild($thbody2)
   $trBody.appendChild($thbody3)
   $trBody.appendChild($thbody4)
   $tBody.appendChild($trBody)
-
-
 
   $table.appendChild($thead)
   $table.appendChild($tBody)
@@ -186,6 +195,7 @@ function createCartModal() {
 
   return $cartWrapper
 }
+
 
 var getCustom = [
   {
