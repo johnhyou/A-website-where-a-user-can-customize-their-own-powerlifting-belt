@@ -116,7 +116,7 @@ var cart = []
 
 function cartBadge() {
   var $cart = document.createElement('div')
-  var $icon = document.createElement('i')
+  var $icon = document.createElement('button')
 
   $icon.classList.add('fa')
   $icon.classList.add('fa-shopping-cart')
@@ -132,15 +132,60 @@ function cartBadge() {
 }
 
 var $viewCart = document.querySelector('.shopcart')
+$viewCart.addEventListener('click', function(event) {
+  var $cartModal = document.querySelector('#view-cart-modal')
+  $cartModal.appendChild(createCartModal())
 
-$viewCart[0].addEventListener('click', function(event) {
+
+})
+
+function createCartModal() {
   var $cartWrapper = document.createElement('div')
   var $table = document.createElement('table')
   var $thead = document.createElement('thead')
   var $tr = document.createElement('tr')
+  var $th1 = document.createElement('th')
+  var $th2 = document.createElement('th')
+  var $th3 = document.createElement('th')
+  var $th4 = document.createElement('th')
 
-})
+  $cartWrapper.classList.add('cart-wrapper')
+  $table.classList.add('table')
 
+  $th1.textContent = 'Product'
+  $th2.textContent = 'Price'
+  $th3.textContent = 'Quantity'
+  $th4.textContent = 'Total'
+
+
+  $tr.appendChild($th1)
+  $tr.appendChild($th2)
+  $tr.appendChild($th3)
+  $tr.appendChild($th4)
+  $thead.appendChild($tr)
+
+  /* table body starts now */
+  var $tBody = document.createElement('tbody')
+  var $trBody = document.createElement('tr')
+  var $thbody1 = document.createElement('th')
+  var $thbody2 = document.createElement('th')
+  var $thbody3 = document.createElement('th')
+  var $thbody4 = document.createElement('th')
+
+  $trBody.appendChild($thbody1)
+  $trBody.appendChild($thbody2)
+  $trBody.appendChild($thbody3)
+  $trBody.appendChild($thbody4)
+  $tBody.appendChild($trBody)
+
+
+
+  $table.appendChild($thead)
+  $table.appendChild($tBody)
+  $cartWrapper.appendChild($table)
+
+  return $cartWrapper
+}
 
 var getCustom = [
   {
