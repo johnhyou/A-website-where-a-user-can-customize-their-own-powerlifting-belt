@@ -128,8 +128,11 @@ function cartBadge() {
 
   $cart.appendChild($icon)
 
+
+
   return $cart
 }
+
 
 
 var getCustom = [
