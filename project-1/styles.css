@@ -145,3 +145,8 @@ label {
 .box:hover {
   background-size: 75%;
 }
+
+.cart-wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
